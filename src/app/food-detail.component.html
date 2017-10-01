@@ -4,13 +4,42 @@
     
     <md-card>
     <form class="example-form">
-        <md-form-field class="example-full-width">
-            <input mdInput placeholder="Name" name="name" [(ngModel)]="food.name" disabled value="Ushio">
-        </md-form-field>
-        <md-form-field>
+        <table class="example-full-width" cellspacing="0"><tr>
+        <td colspan="2" align="left"><md-form-field class="example-full-width">
+            <input mdInput placeholder="Name" name="name" [(ngModel)]="food.name">
+        </md-form-field></td>
+        <td colspan="2" align="left"><md-form-field>
             <input mdInput [(ngModel)]="food.date" name="date" [mdDatepicker]="myDatepicker">
             <md-datepicker-toggle mdSuffix [for]="myDatepicker"></md-datepicker-toggle>
             <md-datepicker #myDatepicker></md-datepicker>
-        </md-form-field>
+        </md-form-field></td>
+    </tr>
+    <tr>
+            <td><md-form-field class="example-full-width">
+                <input mdInput placeholder="Calorie" name="calorie" [(ngModel)]="food.calorie">
+            </md-form-field></td>
+            <td><md-form-field class="example-full-width">
+                    <input mdInput placeholder="Protein" name="protein" [(ngModel)]="food.protein">
+                </md-form-field></td>
+                <td><md-form-field class="example-full-width">
+                        <input mdInput placeholder="Carb" name="carb" [(ngModel)]="food.carb">
+                    </md-form-field></td>
+                    <td><md-form-field class="example-full-width">
+                            <input mdInput placeholder="Fat" name="fat" [(ngModel)]="food.fat">
+                        </md-form-field></td>
+        </tr>
+        
+</table>
+
+       <p align="left">
+        <md-select placeholder="Meal Type" [(ngModel)]="food.meal_type" name="meal_type">
+            <md-option *ngFor="let meal_type of meal_types" [value]="meal_type.value">
+                {{ meal_type.viewValue}}
+            </md-option>
+        </md-select>
+    </p>
+    <p align="left">
+        <button md-button>Submit</button>
+    </p>
     </form>
     </md-card>

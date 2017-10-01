@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Food } from './food';
+import { Food, FoodType } from './food';
 import { Location } from '@angular/common';
 import { DateAdapter, NativeDateAdapter } from '@angular/material';
 @Component({
@@ -14,8 +14,14 @@ export class FoodDetailComponent {
     this.food = new Food();
     this.food.name = "Taro";
     this.food.date = new Date();
+    this.food.meal_type = FoodType.breakfast;
     
   }
-
+  meal_types = [
+    { value: 0, viewValue :'BreakFast'},
+    { value: 1, viewValue :'Lunch'},
+    { value: 2, viewValue :'Dinner'},
+    { value: 3, viewValue :'Snack'},
+  ]
   title = 'Muscle Hack';
 }

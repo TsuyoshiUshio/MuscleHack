@@ -12,5 +12,5 @@ export class Food {
     protein: number;
     carb: number;
     fat: number;
-    meal_kind: FoodType;
+    meal_type: FoodType;
 }

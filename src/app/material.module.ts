@@ -10,6 +10,7 @@ import {
   MdNativeDateModule,
   MatDatepickerModule,
   MAT_DATE_LOCALE,
+  MatSelectModule,
 } from '@angular/material';
 
 @NgModule({
@@ -22,6 +23,7 @@ import {
     MatInputModule,
     MdNativeDateModule,
     MatDatepickerModule,
+    MatSelectModule,
   ],
   exports: [
     MdButtonModule,
@@ -32,6 +34,7 @@ import {
     MatInputModule,
     MdNativeDateModule,
     MatDatepickerModule,
+    MatSelectModule,
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'ja-JP'},
