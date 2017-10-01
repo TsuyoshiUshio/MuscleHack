@@ -1,0 +1,72 @@
+<div>
+  <md-toolbar color="primary">
+    <span><md-icon>mood</md-icon></span>
+
+    <span>{{title}}</span>
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+
+  <div *ngIf="food" layout="column" ng-cloak class="md-inline-form">
+    <md-content md-theme="docks-dark" layout-gt-sm="row" layout-padding>
+      <div>
+        <md-input-container>
+          <label>Name</label>
+            <input [(ngModel)]="food.name" placeholder="name">
+        </md-input-container>
+        <md-input-container>
+            <label>Date</label>
+            <md-datepicker [(ngModel)]="food.name"></md-datepicker>
+          </md-input-container>
+      </div>
+      </md-content>
+
+    <md-content layout-padding>
+      <div>
+       <div layout-gt-xs="row">
+
+        <md-input-container>
+            <label>Calorie</label>
+              <input [(ngModel)]="food.calorie" placeholder="calorie">
+          </md-input-container>
+          <md-input-container>
+              <label>Protein</label>
+                <input [(ngModel)]="food.protein" placeholder="protein">
+            </md-input-container> 
+            <md-input-container>
+                <label>Fat</label>
+                  <input [(ngModel)]="food.fat" placeholder="fat">
+              </md-input-container>
+            </div>
+
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Meal Kind</label>
+              <md-select [(ngModel)]="food.meal_kind">
+                <md-option value="0">Breakfast</md-option>
+                <md-option value="1">Lunch</md-option>
+                <md-option value="2">Dinner</md-option>
+              <md-option vlaue="3">Snack</md-option>
+              </md-select>
+            </md-input-container>
+        </div>
+
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item>Option 1</button>
+    <button md-menu-item>Option 2</button>
+  </md-menu>
+
+  <md-card>
+    <button md-button>All</button>
+    <button md-raised-button>Of</button>
+    <button md-raised-button color="primary">The</button>
+    <button md-raised-button color="accent">Buttons</button>
+  </md-card>
+
+  <span class="done">
+    <button md-fab>
+      <md-icon>check circle</md-icon>
+    </button>
+  </span>
+</div>
