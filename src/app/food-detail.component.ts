@@ -15,7 +15,10 @@ export class FoodDetailComponent {
     this.food.name = "Taro";
     this.food.date = new Date();
     this.food.meal_type = FoodType.breakfast;
-    this.meal_types = Object.keys(FoodType).filter(v => Number(v) || v == '0').map(k => { return { value : Number(k), viewValue: FoodType[Number(k)] }});    
+    this.meal_types = Object.keys(FoodType)
+                            .map(Number)
+                            .filter(Number.isInteger)
+                            .map(k => ({ value: Number(k), viewValue: FoodType[Number(k)] }));
   }
   meal_types = [];
   title = 'Muscle Hack';
